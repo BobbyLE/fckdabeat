@@ -25,6 +25,7 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 2.13.0"
+  gem "capybara", "~> 2.0.3"
 end
 
 group :development do
