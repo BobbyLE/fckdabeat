@@ -1,6 +1,11 @@
 Fckdabeat::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
   
-  match 'admins/articles',    :to => 'admins#articles'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match 'admin/articles',    :to => 'admins#articles'
+  match 'admin/aboutus',    :to => 'admins#aboutus'
+  match '/admin', to: 'sessions#new'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
