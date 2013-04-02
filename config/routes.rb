@@ -1,4 +1,7 @@
 Fckdabeat::Application.routes.draw do
+  
+  match 'admins/articles',    :to => 'admins#articles'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
