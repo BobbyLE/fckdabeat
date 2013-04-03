@@ -8,6 +8,7 @@ module SessionsHelper
     !current_user.nil?
   end
   
+  
   def current_user=(user)
     @current_user = user
   end
@@ -32,7 +33,21 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
   
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
+  end
+
+  def store_location
+    session[:return_to] = request.url
+  end
+  
+  #redirect me
   def redirect_to_signin
     redirect_to signin_url, notice: "Please sign in."
+  end
+  
+  def redirect_to_user
+    redirect_to admin_articles_url, notice: "You have no access"
   end
 end
