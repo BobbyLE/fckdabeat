@@ -8,7 +8,7 @@ Fckdabeat::Application.routes.draw do
   match 'admin/aboutus',    to: 'admins#aboutus'
   match '/admin', to: 'sessions#new'
   
-  root to: "sessions#new"
+  root to: "admins#articles"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

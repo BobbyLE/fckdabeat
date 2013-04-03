@@ -48,6 +48,6 @@ module SessionsHelper
   end
   
   def redirect_to_user
-    redirect_to admin_articles_url, notice: "You have no access"
+    redirect_to(root_path) unless current_user?(@user)
   end
 end
