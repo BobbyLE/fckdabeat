@@ -1,9 +1,8 @@
 <% provide(:title, "Sign in") %>
-
-<h1><% if !signed_in? %>Sign in<% else %>You are logged as <%end%></h1>
-<div class="row">
-  <div class="span6 offset3">
-  	<% if !signed_in? %>
+<% if !signed_in? %>
+	<h1>Sign in</h1>
+	<div class="row">
+	  <div class="span6 offset3">
 	    <%= form_for(:session, url: sessions_path) do |f| %>
 	      <%= f.label :email %>
 	      <%= f.text_field :email %>
@@ -13,8 +12,10 @@
 	      
 	      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
 	    <% end %>
-    <% else %>
-    
-    <%end%>
-  </div>
-</div>
+	  </div>
+	</div>
+<% else %>
+	<script type="text/javascript">
+		window.location.href="../admin/articles"  
+	</script>
+<% end %>

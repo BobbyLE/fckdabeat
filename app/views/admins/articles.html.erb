@@ -1,8 +1,14 @@
 <% provide(:title, 'Articles') %>
-<div class="center hero-unit">
-  <h1>fckdabeat</h1>
-
-  <h2>
-    This will be the page of articles
-  </h2>
-</div>
+<% if signed_in? %>
+	<div class="center hero-unit">
+	  <h1>fckdabeat</h1>
+	
+	  <h2>
+	    This will be the page of articles
+	  </h2>
+	</div>
+<% else %>
+	<script type="text/javascript">
+		window.location.href="../signin"  
+	</script>
+<% end %>
