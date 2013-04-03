@@ -47,12 +47,3 @@ test:
   username: admin
   password: admin
   host: localhost
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: fckdabeat_db
-  pool: 5
-  username: admin
-  password: admin
-  host: localhost
