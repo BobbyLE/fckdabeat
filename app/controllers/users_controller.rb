@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController 
   before_filter :signed_in_user, only: [:index, :edit, :update]
   before_filter :correct_user,   only: [:edit, :update]
    
@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def index
+    @users = User.paginate(:page => params[:page], :per_page => 9)
   end
   
   def edit
