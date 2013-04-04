@@ -1,11 +1,16 @@
 Fckdabeat::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, only: [:new, :create, :destroy]
   
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match 'admin/articles',    to: 'admins#articles'
   match 'admin/aboutus',    to: 'admins#aboutus'
+  
+  match 'admin/posts/new',    to: 'posts#new'
+  match 'admin/posts',    to: 'posts#admin_index'
+  
   match '/admin', to: 'sessions#new'
   
   root to: "admins#articles"

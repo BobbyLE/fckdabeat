@@ -1,5 +1,16 @@
 <% provide(:title, @user.name) %>
-<div class="center hero-unit">
-	<h1><%= @user.name %></h1>
-	<h2><%= @user.email %></h2>
+<div class="hero-unit">
+	<div class="center">
+		<h1><%= @user.name %></h1>
+		<h2><%= @user.email %></h2>
+	</div>
+	<div>
+		<% if @user.posts.any? %>
+		  <h3>Posts (<%= @user.posts.count %>)</h3>
+		  <ol class="posts">
+		    <%= render @posts %>
+		  </ol>
+		  <%= will_paginate @posts %>
+		<% end %>
+   </div>
 </div>
