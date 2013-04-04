@@ -2,6 +2,7 @@
 <div>
 	<% if @posts.any? %>
 	  <h2>Posts (<%= @posts.count %>)</h3>
+	  <%= will_paginate @posts %>
 	  <ol class="posts">
 	  	<% @posts.each do |post|%>
 	    <li>
@@ -13,10 +14,10 @@
 		  <span class="content"><%= post.content %></span>
 		  <div class="center">
 		  <% if current_user?(post.user) %>
-		  	<%= link_to "Edit", edit_post_path(post) %>
+		  	<%= link_to "Edit", edit_post_path(post), title: "Edit "+post.content %>
 		    <%= link_to "Delete", post, method: :delete,
 		                                     data: { confirm: "Are you sure?" },
-		                                     title: post.content %>
+		                                     title: "Delete "+post.content %>
 		  <% end %>
 		  </div>
 		</div>
@@ -24,5 +25,7 @@
 		<% end %>
 	  </ol>
 	  <%= will_paginate @posts %>
+	<% else %>
+	<strong>There are no post yet. Let's <%= link_to "add", admin_posts_new_path %> a new one!</strong>
 	<% end %>
 </div>
