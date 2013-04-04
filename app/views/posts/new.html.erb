@@ -1,13 +1,5 @@
+<% provide(:title, "Add a new Post") %>
 <div class="hero-unit">
-	<%= form_for(@post) do |f| %>
-	  <%= render 'shared/error_messages', object: f.object %>
-	  <div class="field">
-	    <%= f.label :title %>
-	  	<%= f.text_field :title, placeholder: "title" %>
-	  	
-	  	<%= f.label :content %>
-	    <%= f.text_area :content, placeholder: "Compose new post..." %>
-	  </div>
-	  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-	<% end %>
+	<h3 class="center">Add a new Post</h3>
+	<%= render 'form' %>
 </div>
