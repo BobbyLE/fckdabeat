@@ -1,3 +1,4 @@
+<%= tinymce %>
 <%= form_for(@post) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
@@ -5,7 +6,7 @@
   	<%= f.text_field :title, placeholder: "title" %>
   	
   	<%= f.label :content %>
-    <%= f.text_area :content, placeholder: "Compose new post..." %>
+    <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>
   </div>
   <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -11,13 +11,13 @@
 		  <span class="timestamp">
 		    Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
 		  </span>
-		  <span class="content"><%= post.content %></span>
+		  <span class="content"><%= raw(post.content) %></span>
 		  <div class="center">
 		  <% if current_user?(post.user) %>
-		  	<%= link_to "Edit", edit_post_path(post), title: "Edit "+post.content %>
+		  	<%= link_to "Edit", edit_post_path(post), title: "Edit "+post.title %>
 		    <%= link_to "Delete", post, method: :delete,
 		                                     data: { confirm: "Are you sure?" },
-		                                     title: "Delete "+post.content %>
+		                                     title: "Delete "+post.title %>
 		  <% end %>
 		  </div>
 		</div>

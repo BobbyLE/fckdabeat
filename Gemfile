@@ -9,7 +9,10 @@ gem 'activerecord-reset-pk-sequence'
 #paginate
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+#tinymce
+gem "tinymce-rails"
 
+#bd
 gem 'pg'
 
 
