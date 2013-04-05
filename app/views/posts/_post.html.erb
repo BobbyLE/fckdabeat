@@ -1,6 +1,6 @@
 <li>
   <h3><%= post.title %></h3>
-  <span class="content"><%= post.content %></span>
+  <span class="content"><%= raw(post.content) %></span>
   <span class="timestamp">
     Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
   </span>
