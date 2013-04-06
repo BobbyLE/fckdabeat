@@ -34,4 +34,7 @@ Fckdabeat::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # add images uplaod avatar
+  Paperclip.options[:command_path] = "/c/Windows/System32/convert"
 end

@@ -11,7 +11,9 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 #tinymce
 gem "tinymce-rails"
-
+#image upload avatar
+gem "paperclip", "~> 3.4.1"
+gem "cocaine", "~> 0.5.0"
 #bd
 gem 'pg'
 
