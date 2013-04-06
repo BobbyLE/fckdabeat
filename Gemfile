@@ -14,7 +14,6 @@ gem "tinymce-rails"
 #image upload avatar
 gem "paperclip", "~> 3.4.1"
 gem "cocaine", "~> 0.5.0"
-gem "aws-sdk"
 #bd
 gem 'pg'
 
