@@ -3,9 +3,11 @@
 -------------------------------------------------------------------- */
 
 
-body {
+body.root {
   background: black;
+  
+  article {
+    float: left
+  }
 }
-article {
-  float: left
-}
+
