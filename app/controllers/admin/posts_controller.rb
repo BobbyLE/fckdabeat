@@ -12,9 +12,6 @@ class Admin::PostsController < ApplicationController
     #User's posts
     #@posts = @user.posts.paginate(page: params[:page])
   end
- 
-  def show
-  end
   
   def create
     @post = current_user.posts.build(params[:post])

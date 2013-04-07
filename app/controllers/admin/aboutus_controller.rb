@@ -3,10 +3,6 @@ class Admin::AboutusController < ApplicationController
   def index
     @aboutus = Aboutu.find(1)
   end
-  
-  def admin_index
-    @aboutus = Aboutu.find(1)
-  end
 
   def show
     @aboutu = Aboutu.find(1)
