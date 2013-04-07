@@ -13,7 +13,7 @@ Fckdabeat::Application.routes.draw do
   
   match '/admin', to: 'sessions#new'
   
-  root to: "admin#articles"
+  root to: "pages#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
