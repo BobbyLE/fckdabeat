@@ -8,7 +8,11 @@ class Admin::PostsController < ApplicationController
   
   def index
     @user = User.find(current_user.id)
-    @posts = Post.paginate(:page => params[:page], :per_page => 9)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 9)
+    end
     #User's posts
     #@posts = @user.posts.paginate(page: params[:page])
   end

@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 9)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 9)
+    end
   end
 end

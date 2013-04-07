@@ -14,6 +14,9 @@
 		    Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
 		  </span>
 		  <span class="content"><%= raw(post.content) %></span>
+		  <p class="tags">
+		  	Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+		  </p>
 		  <div class="center">
 		  <% if current_user?(post.user) %>
 		  	<%= link_to "Edit", edit_admin_post_path(post), title: "Edit "+post.title %>

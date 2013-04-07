@@ -6,4 +6,7 @@
   <span class="timestamp">
     Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
   </span>
+  <p class="tags">
+  	Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+  </p>
 </li>

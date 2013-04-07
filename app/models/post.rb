@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :category, :thumbnail
+  attr_accessible :content, :title, :category, :thumbnail, :tag_list
   belongs_to :user
+  acts_as_taggable
   
   validates :user_id, presence: true
   validates :title, presence: true, length: {maximum: 30}

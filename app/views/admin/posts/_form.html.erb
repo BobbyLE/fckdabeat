@@ -9,7 +9,10 @@
   	<%= f.file_field :thumbnail %>
   	
   	<%= f.label :category %>
-  	<%= f.text_field :category, placeholder: "category" %>
+  	<%= f.text_field :category, placeholder: "category (main tag)" %>
+  	
+  	<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  	<%= f.text_field :tag_list %>
   	
   	<%= f.label :content %>
     <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>

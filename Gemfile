@@ -15,6 +15,8 @@ gem "tinymce-rails"
 #image upload avatar
 gem 'paperclip', '~> 3.4.0'
 gem 'aws-sdk', '~> 1.6.0'
+#tags for posts
+gem 'acts-as-taggable-on', '~> 2.3.1'
 #bd
 gem 'pg'
 

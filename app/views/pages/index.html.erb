@@ -7,6 +7,9 @@
 	      	<article><%= image_tag post.thumbnail.url(:thumb) %>
 				<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
 				<% raw(post.content) %>
+				<!--<p class="tags">
+					Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+				</p> -->
 			</article>
 		<% end %>
 	  <%= will_paginate @posts %>
@@ -14,5 +17,6 @@
 	<% else %>
 	<strong>There are no post yet.</strong>
 	<% end %>
+	
 </div>
 

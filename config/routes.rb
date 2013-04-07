@@ -13,7 +13,9 @@ Fckdabeat::Application.routes.draw do
   
   match '/admin', to: 'sessions#new'
   
+  get 'tags/:tag', to: 'pages#index', as: :tag
   root to: "pages#index"
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
