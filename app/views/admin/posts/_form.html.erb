@@ -8,6 +8,9 @@
   	<%= f.label :thumbnail %>
   	<%= f.file_field :thumbnail %>
   	
+  	<%= f.label :category %>
+  	<%= f.text_field :category, placeholder: "category" %>
+  	
   	<%= f.label :content %>
     <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>
   </div>
