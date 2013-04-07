@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates_attachment_presence :thumbnail
   
   #paperclip
-  has_attached_file :thumbnail, :styles => {:thumb => "320x320#"}, :default_url => "/images/:style/missing.png"
+  has_attached_file :thumbnail, :styles => {:thumb => '320x320#'}
   
   default_scope order: 'posts.created_at DESC'
 end

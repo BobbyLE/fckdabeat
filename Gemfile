@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery-rails'
 gem "bootstrap-sass", "~> 2.3.1.0"
 #has_secured_password
 gem "bcrypt-ruby", "~> 3.0.1"
@@ -12,8 +13,8 @@ gem 'bootstrap-will_paginate'
 #tinymce
 gem "tinymce-rails"
 #image upload avatar
-gem "paperclip", "~> 3.4.1"
-gem "cocaine", "~> 0.5.0"
+gem 'paperclip', '~> 3.4.0'
+gem 'aws-sdk', '~> 1.6.0'
 #bd
 gem 'pg'
 
@@ -23,15 +24,13 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
 
 group :development, :test do
   gem "rspec-rails", "~> 2.13.0"
+  gem 'sqlite3'
   gem "capybara", "~> 2.0.3"
   gem "factory_girl", "~> 4.2.0"
 end
@@ -42,8 +41,6 @@ end
 group :production do
   gem 'thin'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

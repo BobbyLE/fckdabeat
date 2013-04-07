@@ -2,7 +2,7 @@ Fckdabeat::Application.routes.draw do
   resources :aboutus, only: [:index, :edit, :update]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts, only: [:new, :create, :edit, :update, :destroy]
+  resources :posts
   
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
