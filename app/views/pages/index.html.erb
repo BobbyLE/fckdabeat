@@ -2,7 +2,7 @@
 <div>
 	<% if @posts.any? %>
 	  <section>
-	  <%= will_paginate @posts %>  
+	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
 	  	<% @posts.each do |post|%>
 	      	<article><%= image_tag post.thumbnail.url(:thumb) %>
 				<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
@@ -12,7 +12,8 @@
 				</p> -->
 			</article>
 		<% end %>
-	  <%= will_paginate @posts %>
+		<article><%= image_tag 'follow.png'%></article>
+	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %> 
 	  </section>
 	<% else %>
 	<strong>There are no post yet.</strong>
