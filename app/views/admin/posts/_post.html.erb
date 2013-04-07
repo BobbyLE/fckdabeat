@@ -1,0 +1,8 @@
+<li>
+  <h3><%= post.title %></h3>
+  <%= image_tag post.thumbnail.url(:thumb) %>
+  <span class="content"><%= raw(post.content) %></span>
+  <span class="timestamp">
+    Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
+  </span>
+</li>

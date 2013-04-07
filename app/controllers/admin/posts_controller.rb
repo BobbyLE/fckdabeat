@@ -1,18 +1,21 @@
-class PostsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :admin_index, :create, :edit, :destroy]
+class Admin::PostsController < ApplicationController
+  before_filter :signed_in_user, only: [:new, :index, :create, :edit, :destroy]
   before_filter :correct_user,   only: [:edit, :update, :destroy]
   
   def new
     @post = current_user.posts.build if signed_in?
   end
   
-  def admin_index
+  def index
     @user = User.find(current_user.id)
     @posts = Post.paginate(:page => params[:page], :per_page => 9)
     #User's posts
     #@posts = @user.posts.paginate(page: params[:page])
   end
-
+ 
+  def show
+  end
+  
   def create
     @post = current_user.posts.build(params[:post])
     if @post.save
@@ -38,15 +41,16 @@ class PostsController < ApplicationController
   end
   
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
     Post.reset_pk_sequence
     redirect_to admin_posts_path
   end
   
-  private
+    private
 
     def correct_user
-      @post = current_user.posts.find_by_id(params[:id])
-      redirect_to root_url if @post.nil?
+      @user = User.find(current_user.id)
+      redirect_to(admin_posts_path) unless current_user?(@user)
     end
 end

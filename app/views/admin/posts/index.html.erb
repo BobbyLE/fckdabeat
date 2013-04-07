@@ -1,0 +1,32 @@
+<% provide(:title, "Posts") %>
+<div>
+	<% if @posts.any? %>
+	  <h3 class="center">Posts (<%= @posts.count %>)</h3>
+	  <%= will_paginate @posts %>
+	  <ol class="posts">
+	  	<% @posts.each do |post|%>
+	    <li>
+	    <div class="hero-unit">
+	      <div class="group"><%= image_tag post.thumbnail.url(:thumb) %></div>
+		  <h3><%= post.title %></h3>
+		  <span class="timestamp">
+		    Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
+		  </span>
+		  <span class="content"><%= raw(post.content) %></span>
+		  <div class="center">
+		  <% if current_user?(post.user) %>
+		  	<%= link_to "Edit", edit_admin_post_path(post), title: "Edit "+post.title %>
+		    <%= link_to "Delete", admin_post_path(post), method: :delete,
+		                                     data: { confirm: "Are you sure?" },
+		                                     title: "Delete "+post.title %>
+		  <% end %>
+		  </div>
+		</div>
+		</li>
+		<% end %>
+	  </ol>
+	  <%= will_paginate @posts %>
+	<% else %>
+	<strong>There are no post yet. Let's <%= link_to "add", new_admin_post_path %> a new one!</strong>
+	<% end %>
+</div>

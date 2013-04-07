@@ -1,18 +1,15 @@
 Fckdabeat::Application.routes.draw do
-  resources :aboutus, only: [:index, :edit, :update]
-  resources :users
+  namespace :admin do
+    resources :aboutus, only: [:index, :edit, :update]
+    resources :users
+    resources :posts
+  end
+  
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts
+  
   
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-  
-  match 'admin/articles',    to: 'admins#articles'
-  
-  match 'admin/posts/new',    to: 'posts#new'
-  match 'admin/posts',    to: 'posts#admin_index'
-  
-  match 'admin/aboutus',  to: 'aboutus#admin_index'
   
   match '/admin', to: 'sessions#new'
   
