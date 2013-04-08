@@ -44,34 +44,7 @@ body.root {
         text-align: right;
       }
     }
-    /* 2e */
-    .post-hover-top2 {
-      @include post-hover;
-      top: -160px;
-      background: url('post-hover-top2.png') no-repeat;
-      .post-space {
-        height: 80%;
-      }
-    }
     
-    .post-hover-bottom2 {
-      @include post-hover;
-      bottom: -160px;
-      background: url('post-hover-bottom2.png') no-repeat;
-      .post-space {
-        height: 10%;
-      }
-      .post-title {
-        display: block;
-        height: 70%;
-      }
-      .post-author {
-        display: block;
-        width: 95%;
-        text-align: right;
-      }
-    }
-  }
   footer {
     color : #f2f2f2;
     a {
