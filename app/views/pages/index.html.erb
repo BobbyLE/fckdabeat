@@ -21,6 +21,7 @@
 					Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 				</p> -->
 			</article>
+		<%end%>
 			<article><%= image_tag 'follow.png'%></article>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %> 
 	  </section>
