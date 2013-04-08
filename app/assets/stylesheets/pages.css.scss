@@ -1,13 +1,76 @@
 /* --------------------------------------------------------------------
    Global Front
 -------------------------------------------------------------------- */
-
+@mixin post-hover {
+  position: absolute;
+  z-index: 1;
+  width: 320px;
+  height: 160px;
+  text-align: center;
+}
 
 body.root {
   background: black;
-  
   article {
-    float: left
+    float: left;
+  }
+  article.post-item {
+    overflow: hidden;
+    position: relative;
+    color: white;
+    .post-thumb{position: relative;}
+    
+    .post-hover-top {
+      @include post-hover;
+      top: -160px;
+      background: url('post-hover-top.png') no-repeat;
+    }
+    /* 1er */
+    .post-hover-bottom {
+      @include post-hover;
+      bottom: -160px;
+      background: url('post-hover-bottom.png') bottom no-repeat;
+      
+      .post-space {
+        height: 70%;
+      }
+      .post-title {
+        display: block;
+        top: 30px;
+      }
+      .post-author {
+        display: block;
+        width: 95%;
+        text-align: right;
+      }
+    }
+    /* 2e */
+    .post-hover-top2 {
+      @include post-hover;
+      top: -160px;
+      background: url('post-hover-top2.png') no-repeat;
+      .post-space {
+        height: 80%;
+      }
+    }
+    
+    .post-hover-bottom2 {
+      @include post-hover;
+      bottom: -160px;
+      background: url('post-hover-bottom2.png') no-repeat;
+      .post-space {
+        height: 10%;
+      }
+      .post-title {
+        display: block;
+        height: 70%;
+      }
+      .post-author {
+        display: block;
+        width: 95%;
+        text-align: right;
+      }
+    }
   }
   footer {
     color : #f2f2f2;

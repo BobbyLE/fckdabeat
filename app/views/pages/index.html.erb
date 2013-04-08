@@ -4,13 +4,43 @@
 	  <section>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
 	  	<% @posts.each do |post|%>
-	      	<article><%= image_tag post.thumbnail.url(:thumb) %>
-				<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
-				<% raw(post.content) %>
-				<!--<p class="tags">
-					Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-				</p> -->
-			</article>
+	  		<% if cycle("odd", "even") =="odd"%>
+		      	<article class="post-item">
+		      		<div class="post-hover-top">
+		      			<div class="post-space"></div>
+		      			<span class="post-category"><%= post.category %></span>
+		      		</div>
+		      		<div class="post-thumb"><%= image_tag post.thumbnail.url(:thumb) %></div>
+		      		<div class="post-hover-bottom">
+		      			<div class="post-space"></div>
+		      			<span class="post-title"><%= post.title %></span>
+		      			<span class="post-author"><Maxmada><%= post.user.name%></span>
+		      		</div>
+					<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
+					<% raw(post.content) %>
+					<!--<p class="tags">
+						Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+					</p> -->
+				</article>
+			<% else%>
+				<article class="post-item">
+		      		<div class="post-hover-top2">
+		      			<div class="post-space"></div>
+		      			<span class="post-category"><%= post.category %></span>
+		      		</div>
+		      		<div class="post-thumb"><%= image_tag post.thumbnail.url(:thumb) %></div>
+		      		<div class="post-hover-bottom2">
+		      			<div class="post-space"></div>
+		      			<span class="post-title"><%= post.title %></span>
+		      			<span class="post-author"><%= post.user.name %></span>
+		      		</div>
+					<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
+					<% raw(post.content) %>
+					<!--<p class="tags">
+						Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+					</p> -->
+				</article>
+			<% end %>
 		<% end %>
 		<article><%= image_tag 'follow.png'%></article>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %> 
