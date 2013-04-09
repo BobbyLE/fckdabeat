@@ -3,25 +3,41 @@
 	<% if @posts.any? %>
 	  <section>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
-	  	<% @posts.each do |post|%>
-	      	<article class="post-item">
-	      		<div class="post-hover-top">
-	      			<div class="post-space"></div>
-	      			<span class="post-category"><%= post.category.upcase %></span>
-	      		</div>
-	      		<div class="post-thumb"><%= image_tag post.thumbnail.url(:thumb) %></div>
-	      		<div class="post-hover-bottom">
-	      			<div class="post-space"></div>
-	      			<span class="post-title"><%= post.title %></span>
-	      			<span class="post-author"><Maxmada><%= post.user.name%></span>
-	      		</div>
-				<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
-				<% raw(post.content) %>
-				<!--<p class="tags">
-					Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-				</p> -->
-			</article>
-		<%end%>
+	  	<% @posts.each_with_index do |post, i|%>
+	  			<a data-toggle="modal" href="#myModal<%= i %>">
+			      	<article class="post-item">
+			      		<div class="post-hover-top">
+			      			<div class="post-space"></div>
+			      			<span class="post-category"><%= post.category.upcase %></span>
+			      		</div>
+			      		<div class="post-thumb"><%= image_tag post.thumbnail.url(:thumb) %></div>
+			      		<div class="post-hover-bottom">
+			      			<div class="post-space"></div>
+			      			<span class="post-title"><%= post.title %></span>
+			      			<span class="post-author"><Maxmada><%= post.user.name%></span>
+			      		</div>
+			      		
+						<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
+						<% raw(post.content) %>
+						<!--<p class="tags">
+							Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+						</p> -->
+					</article>
+				</a>
+				<div id="myModal<%= i %>" class="modal hide fade" style="display: none; ">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">×</a>
+						<h3><%= post.title %></h3>
+					</div>
+					<div class="modal-body">
+						<%= image_tag post.thumbnail.url(:small) %>
+					</div>
+					<div class="modal-footer">
+						<a href="http://www.LJScope.com" target="_blank" rel="external" class="btn btn-success">Go to the website</a>
+						<a href="#" class="btn" data-dismiss="modal">Close</a>
+					</div>
+				</div>
+	<%end%>
 			<article><%= image_tag 'follow.png'%></article>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %> 
 	  </section>
