@@ -74,7 +74,7 @@ body.root {
     .modal-body {
       vertical-align: top;
       padding: 10px 50px 10px 50px;
-      height: 1000px;
+      max-height: 1500px;
       .scroll-pane {
         outline: none;
         width: 100%;
@@ -93,6 +93,9 @@ body.root {
       background-color: white;
       border: none;
       padding: 10px 16px;
+      border-radius: none !important;
+      -moz-border-radius: none !important;
+      -webkit-border-radius: none !important;
       
       .tags {
         font-family: 'futurateeligconregular','Trebuchet MS'; 
