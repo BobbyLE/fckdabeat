@@ -4,7 +4,7 @@
 	  <section>
 	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
 	  	<% @posts.each_with_index do |post, i|%>
-	  			<a data-toggle="modal" href="#myModal<%= i %>">
+	  			<a data-toggle="modal" href="#post-popin<%= i %>">
 			      	<article class="post-item">
 			      		<div class="post-hover-top">
 			      			<div class="post-space"></div>
@@ -21,7 +21,7 @@
 						<!-- -->
 					</article>
 				</a>
-				<div id="myModal<%= i %>" class="modal hide fade" style="display: none; ">
+				<div id="post-popin<%= i %>" class="modal hide fade" style="display: none; ">
 					<div class="modal-header">
 						<a class="close" data-dismiss="modal">×</a>
 						<h3><%= post.title %></h3>
