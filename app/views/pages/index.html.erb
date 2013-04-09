@@ -18,10 +18,7 @@
 			      		</div>
 			      		
 						<!--Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.-->
-						<% raw(post.content) %>
-						<!--<p class="tags">
-							Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-						</p> -->
+						<!-- -->
 					</article>
 				</a>
 				<div id="myModal<%= i %>" class="modal hide fade" style="display: none; ">
@@ -30,11 +27,15 @@
 						<h3><%= post.title %></h3>
 					</div>
 					<div class="modal-body">
-						<%= image_tag post.thumbnail.url(:small) %>
+						<div class="scroll-pane">
+							<%= image_tag post.thumbnail.url(:small), :class => "pull-left small-thumb" %>
+							<%= raw(post.content) %>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<a href="http://www.LJScope.com" target="_blank" rel="external" class="btn btn-success">Go to the website</a>
-						<a href="#" class="btn" data-dismiss="modal">Close</a>
+						<span class="tags pull-right">
+							Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+						</span>
 					</div>
 				</div>
 	<%end%>

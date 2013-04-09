@@ -4,6 +4,7 @@
 
 _delay = 200
 $ ->
+  #Hover on post items
   $(".post-item").on "mouseenter", ->
     $(this).find(".post-hover-top").stop().animate
       top: "0px"
@@ -19,3 +20,7 @@ $ ->
     $(this).find(".post-hover-bottom").stop().animate
       bottom: "-160px"
     , _delay
+  
+  #modal scrollbar
+  $('.scroll-pane').jScrollPane autoReinitialise: true;
+

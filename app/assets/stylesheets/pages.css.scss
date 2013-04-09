@@ -8,9 +8,14 @@
   height: 160px;
   text-align: center;
 }
-
+html {
+  overflow: auto;
+}
 body.root {
   background: black;
+  p {
+    text-align: justify;
+  }
   article {
     float: left;
   }
@@ -48,6 +53,41 @@ body.root {
       }
     }
   }
+  /* end article*/
+ .modal {
+   width: 700px;
+   margin-left: -350px;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+    .modal-header {
+      border: none;
+      background: url('modal-header.png') no-repeat bottom center;
+      h3 {
+        text-align: center
+      }
+    }
+    .modal-body {
+      vertical-align: top;
+      padding: 10px 50px 10px 50px;
+      .scroll-pane {
+        outline: none;
+        width: 100%;
+        height: 350px;
+        overflow: auto;
+        padding-right: 40px;
+      }
+      .small-thumb {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .modal-footer {
+      background-color: white;
+      border: none;
+      padding: 10px 16px;
+    }
+  } 
     
   footer {
     color : #f2f2f2;
