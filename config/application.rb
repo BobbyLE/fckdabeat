@@ -61,6 +61,5 @@ module Fckdabeat
     #act_as_taggle_on config
     ActsAsTaggableOn.remove_unused_tags = true
     ActsAsTaggableOn.force_lowercase = true
-    ActsAsTaggableOn.delimiter = ' '
   end
 end
