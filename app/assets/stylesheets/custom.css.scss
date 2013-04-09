@@ -1,4 +1,40 @@
 @import "bootstrap";
+@font-face {
+    font-family: 'futurateeregular';
+    src: url('fonts/futuratee-webfont.eot');
+    src: url('fonts/futuratee-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futuratee-webfont.woff') format('woff'),
+         url('fonts/futuratee-webfont.ttf') format('truetype'),
+         url('fonts/futuratee-webfont.svg#futurateeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'futurateeligconregular';
+    src: url('fonts/futurateeligcon-webfont.eot');
+    src: url('fonts/futurateeligcon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futurateeligcon-webfont.woff') format('woff'),
+         url('fonts/futurateeligcon-webfont.ttf') format('truetype'),
+         url('fonts/futurateeligcon-webfont.svg#futurateeligconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futurateemedregular';
+    src: url('fonts/futurateemed-webfont.eot');
+    src: url('fonts/futurateemed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futurateemed-webfont.woff') format('woff'),
+         url('fonts/futurateemed-webfont.ttf') format('truetype'),
+         url('fonts/futurateemed-webfont.svg#futurateemedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /* mixins, variables, etc. */
 
@@ -17,6 +53,7 @@ html {
 
 body {
   padding-top: 60px;
+  font-family: 'futurateeregular','Trebuchet MS'; 
 }
 
 section {
@@ -40,6 +77,8 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "futurateemedregular",'Trebuchet MS'; 
+  font-weight: normal;
   line-height: 1;
 }
 
