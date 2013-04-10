@@ -2,7 +2,11 @@
 <div>
 	<% if @posts.any? %>
 	  <section>
-	  <%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
+	  	<% if params[:page]==nil || params[:page]== '1'%>
+	  		<article><%= image_tag "base.png" %></article>
+	  	<% else %>
+	  		<%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
+	  	<% end %>	  	
 	  	<% @posts.each_with_index do |post, i|%>
 	  			<a data-toggle="modal" href="#post-popin<%= i %>">
 			      	<article class="post-item">
