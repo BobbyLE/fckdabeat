@@ -50,7 +50,27 @@
 				</div>
 	<%end%>
 			<article><%= image_tag 'follow.png'%></article>
-	  		<article class="white-square"><div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;"><div style="display: block;#position: relative; #top: -50%"><%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %><%= link_to image_tag('about-us.png', :class => "center hover-move"), "#aboutus" %></div></div></article>
+	  		<article class="white-square">
+	  			<div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;">
+	  				<div style="display: block;#position: relative; #top: -50%">
+	  					<%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %>
+	  					<a data-toggle="modal" href="#aboutus-popin"><%= image_tag('about-us.png', :class => "center hover-move")%></a>
+  					</div>
+  				</div>
+	  		</article>
+	  		<div id="aboutus-popin" class="modal hide fade" style="display: none; ">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">×</a>
+					<h3>About Us</h3>
+				</div>
+				<div class="modal-body">
+					<div class="scroll-pane">
+						<%= raw(@aboutus.content) %>
+					</div>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
 	  </section>
 	<% else %>
 	<strong>There are no post yet.</strong>
