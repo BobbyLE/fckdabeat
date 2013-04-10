@@ -5,7 +5,13 @@
 	  	<% if params[:page]==nil || params[:page]== '1'%>
 	  		<article><%= link_to image_tag("base.png"), root_path %></article>
 	  	<% else %>
-	  		<%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
+	  		<article class="white-square">
+	  			<div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;">
+	  				<div style="display: block;#position: relative; #top: -50%">
+	  					<%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>
+	  				</div>
+	  			</div>
+	  		</article>
 	  	<% end %>	  	
 	  	<% @posts.each_with_index do |post, i|%>
 	  			<a data-toggle="modal" href="#post-popin<%= i %>">
@@ -44,7 +50,7 @@
 				</div>
 	<%end%>
 			<article><%= image_tag 'follow.png'%></article>
-	  		<article class="about-us"><div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;"><div style="display: block;#position: relative; #top: -50%"><%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %><%= link_to image_tag('about-us.png', :class => "center hover-move"), "#aboutus" %></div></div></article>
+	  		<article class="white-square"><div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;"><div style="display: block;#position: relative; #top: -50%"><%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %><%= link_to image_tag('about-us.png', :class => "center hover-move"), "#aboutus" %></div></div></article>
 	  </section>
 	<% else %>
 	<strong>There are no post yet.</strong>
