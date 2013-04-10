@@ -25,4 +25,4 @@ $ ->
   $('.scroll-pane').jScrollPane autoReinitialise: true;
   $('.modal-body').height($(window).height()*0.7);
   $('.scroll-pane').height($(window).height()*0.7);
-
+  

@@ -19,6 +19,30 @@ body.root {
   }
   article {
     float: left;
+    width: 320px;
+    height: 320px;
+  }
+  article.about-us {
+    text-align: center;
+    background : white;
+    display: table;
+    height: 320px;
+    overflow: hidden;
+    #position: relative;
+    .hover-move {
+      position: relative;
+      top: 0px;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+    a:hover .hover-move {
+      top: 3px;
+    }
+    img {
+      display: block;
+      margin: auto;
+    }
   }
   article.post-item {
     overflow: hidden;
