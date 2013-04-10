@@ -3,7 +3,7 @@
 	<% if @posts.any? %>
 	  <section>
 	  	<% if params[:page]==nil || params[:page]== '1'%>
-	  		<article><%= image_tag "base.png" %></article>
+	  		<article><%= link_to image_tag("base.png"), root_path %></article>
 	  	<% else %>
 	  		<%= will_paginate @posts, :container => false, :renderer => PaginationRendererPrevious %>  
 	  	<% end %>	  	
