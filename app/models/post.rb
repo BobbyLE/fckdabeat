@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :category, :thumbnail, :tag_list
+  attr_accessible :content, :title, :category, :thumbnail, :tag_list, :public
   belongs_to :user
   acts_as_taggable
   

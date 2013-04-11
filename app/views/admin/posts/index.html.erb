@@ -6,7 +6,7 @@
 	  <ol class="posts">
 	  	<% @posts.each do |post|%>
 	    <li>
-	    <div class="hero-unit">
+	    <div class="hero-unit <% if post.public  %>green<% end %>">
 	      <div class="group"><%= image_tag post.thumbnail.url(:thumb) %></div>
 		  <h3><%= post.title %></h3>
 		  <h4><%= post.category.upcase %></h4>
