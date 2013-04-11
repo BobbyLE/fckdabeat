@@ -19,13 +19,13 @@ body.root {
   }
   .hover-move {
       position: relative;
-      top: 0px;
+      bottom: 0px;
       -webkit-transition: all .2s ease-in-out;
       -moz-transition: all .2s ease-in-out;
       transition: all .2s ease-in-out;
     }
   a:hover .hover-move {
-    top: 3px;
+    bottom : 3px;
   }
   img {
     display: block;

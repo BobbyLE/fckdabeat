@@ -26,3 +26,8 @@ $ ->
   $('.modal-body').height($(window).height()*0.7);
   $('.scroll-pane').height($(window).height()*0.7);
   
+  #links on images
+  $("a .hover-move").mousedown ->
+    $(this).css bottom: "0px"
+  $("a .hover-move").mouseup ->
+    $(this).css bottom: "3px"
