@@ -31,3 +31,4 @@ $ ->
     $(this).css bottom: "0px"
   $("a .hover-move").mouseup ->
     $(this).css bottom: "3px"
+

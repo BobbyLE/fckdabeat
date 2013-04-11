@@ -17,16 +17,8 @@ body.root {
   p {
     text-align: justify;
   }
-  .hover-move {
-      position: relative;
-      bottom: 0px;
-      -webkit-transition: all .2s ease-in-out;
-      -moz-transition: all .2s ease-in-out;
-      transition: all .2s ease-in-out;
-    }
-  a:hover .hover-move {
-    bottom : 3px;
-  }
+  /* hover*/
+  
   img {
     display: block;
     margin: auto;
@@ -35,6 +27,40 @@ body.root {
     float: left;
     width: 320px;
     height: 320px;
+    
+    img:focus {
+      border: none;
+    }
+  }
+  article.follow {
+    background : url('follow.png');
+    text-align: center;
+    img {
+      display:inline-block;
+      position: relative;
+      &.twitter{
+        top: 206px;
+        right: 27px;
+        opacity: 0;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &.facebook{
+        top: 205px;
+        left: 34px;
+        opacity: 0;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
   article.white-square {
     text-align: center;
@@ -43,6 +69,23 @@ body.root {
     height: 320px;
     overflow: hidden;
     #position: relative;
+    
+    .hover-move {
+      position: relative;
+      bottom: 0px;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      &:focus {
+        border: none;
+      }
+    }
+    a:focus {
+      border: none;
+    }
+    a:hover .hover-move {
+      bottom : 3px;
+    }
   }
   article.post-item {
     overflow: hidden;

@@ -48,13 +48,13 @@
 						</span>
 					</div>
 				</div>
-	<%end%>
-			<article><%= image_tag 'follow.png'%></article>
+		<%end%>
+			<article class="follow"><%= link_to image_tag('twitter.png', :class => 'twitter'), 'http://www.twitter.com/', :target => '_blank'%><%= link_to image_tag('facebook.png', :class => 'facebook'), 'http://www.facebook.com/', :target => '_blank' %></article>
 	  		<article class="white-square">
 	  			<div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;">
 	  				<div style="display: block;#position: relative; #top: -50%">
 	  					<%= will_paginate @posts, :container => false, :renderer => PaginationRendererNext %>
-	  					<a data-toggle="modal" href="#aboutus-popin"><%= image_tag('about-us.png', :class => "center hover-move")%></a>
+	  					<a data-toggle="modal" href="#aboutus-popin"><div class="hover-move"><%= image_tag('about-us.png')%></div></a>
   					</div>
   				</div>
 	  		</article>
