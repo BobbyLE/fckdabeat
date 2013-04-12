@@ -1,0 +1,30 @@
+<% provide(:title, "Images") %>
+<div>
+	<% if @images.any? %>
+	  <h3 class="center">Images (<%= @images.count %>)</h3>
+	  <%= will_paginate @images%>
+	  <ol class="images">
+	  	<% @images.each do |image|%>
+	    <li>
+	    <div class="hero-unit">
+	      <div class="group"><%= image_tag image.imagefile.url %></div>
+		  <span class="timestamp">
+		    Published on <%= I18n.l image.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%>.
+		  </span>
+		  <p class="url">
+		  	URL : <%= image.imagefile.url%>
+		  </p>
+		  <div class="center">
+		    <%= link_to "Delete", admin_image_path(image), method: :delete,
+		                                     data: { confirm: "Are you sure?" },
+		                                     title: "Delete "%>
+		  </div>
+		</div>
+		</li>
+		<% end %>
+	  </ol>
+	  <%= will_paginate @images %>
+	<% else %>
+	<strong>There are no image yet. Let's <%= link_to "add", new_admin_image_path %> a new one!</strong>
+	<% end %>
+</div>

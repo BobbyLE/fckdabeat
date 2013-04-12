@@ -1,0 +1,8 @@
+<%= form_for [:admin, @image],  :html => { :multipart => true } do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">  	
+  	<%= f.label :imagefile %>
+  	<%= f.file_field :imagefile %>
+  </div>
+  <%= f.submit "Upload image", class: "btn btn-large btn-primary" %>
+<% end %>

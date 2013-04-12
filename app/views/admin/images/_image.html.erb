@@ -1,0 +1,13 @@
+<li>
+  <h2><strong><%if post.public %>Public<% else %>Private<% end %></strong></h2>
+  <h3><%= post.title %></h3>
+  <h4><%= post.category.upcase %></h4>
+  <div><%= image_tag post.thumbnail.url(:thumb) %></div>
+  <span class="content"><%= raw(post.content) %></span>
+  <span class="timestamp">
+    Published on <%= I18n.l post.created_at.in_time_zone('Paris'), :format => '%A, %B %d %Y at %H:%M'%> by <%= link_to post.user.name, admin_user_path(post.user) %>.
+  </span>
+  <p class="tags">
+  	Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+  </p>
+</li>

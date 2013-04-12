@@ -3,6 +3,7 @@ Fckdabeat::Application.routes.draw do
     resources :aboutus, only: [:index, :edit, :update]
     resources :users
     resources :posts
+    resources :images, only: [:index, :new, :create, :destroy]
   end
   
   resources :sessions, only: [:new, :create, :destroy]
