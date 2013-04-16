@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412120847) do
+ActiveRecord::Schema.define(:version => 20130416101216) do
 
   create_table "aboutus", :force => true do |t|
     t.string   "content"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(:version => 20130412120847) do
     t.datetime "imagefile_updated_at"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+  end
+
+  create_table "logos", :force => true do |t|
+    t.string   "logofile_file_name"
+    t.string   "logofile_content_type"
+    t.integer  "logofile_file_size"
+    t.datetime "logofile_updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "posts", :force => true do |t|

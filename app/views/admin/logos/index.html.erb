@@ -1,0 +1,13 @@
+<% provide(:title, "Logo") %>
+<div>
+  <h3 class="center">Logo</h3>
+    <li>
+    <div class="hero-unit">
+      <div class="group"><%= image_tag @logo.logofile.url %></div>
+	  <div class="center">
+	    <%= link_to "Edit", edit_admin_logo_path(@logo) %>
+	  </div>
+	</div>
+	</li>
+  </ol>
+</div>

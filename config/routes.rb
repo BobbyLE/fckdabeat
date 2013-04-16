@@ -4,6 +4,7 @@ Fckdabeat::Application.routes.draw do
     resources :users
     resources :posts
     resources :images, only: [:index, :new, :create, :destroy]
+    resources :logos
   end
   
   resources :sessions, only: [:new, :create, :destroy]
