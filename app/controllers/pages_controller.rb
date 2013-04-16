@@ -6,6 +6,7 @@ class PagesController < ApplicationController
       @posts = Post.where("public = true").paginate(:page => params[:page], :per_page => 9)
     end
     
+    @logo = Logo.find(1)
     @aboutus = Aboutu.find(1)
   end
 end

@@ -3,7 +3,13 @@
 	<% if @posts.any? %>
 	  <section>
 	  	<% if params[:page]==nil || params[:page]== '1'%>
-	  		<article><%= link_to image_tag("base.png"), root_path %></article>
+	  		<article>
+	  		<% if @logo %>
+	  			<%= link_to image_tag(@logo.logofile.url), root_path %>
+	  		<% else %>
+	  			<%= link_to image_tag("base.png"), root_path %>
+	  		<% end %>
+	  		</article>
 	  	<% else %>
 	  		<article class="white-square">
 	  			<div style="display:table-cell;vertical-align: middle;#position: absolute; #top: 50%;">
